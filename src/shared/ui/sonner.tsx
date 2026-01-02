@@ -12,10 +12,14 @@ import { Toaster as Sonner, type ToasterProps } from 'sonner';
 
 const Toaster = ({ ...props }: ToasterProps): React.JSX.Element => {
   const { theme = 'system' } = useTheme();
+  const resolvedTheme: ToasterProps['theme'] =
+    theme === 'light' || theme === 'dark' || theme === 'system'
+      ? theme
+      : 'system';
 
   return (
     <Sonner
-      theme={theme as ToasterProps['theme']}
+      theme={resolvedTheme}
       className="toaster group"
       icons={{
         success: <CircleCheckIcon className="size-4" />,

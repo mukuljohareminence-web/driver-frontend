@@ -57,7 +57,10 @@ export default function Page(): React.JSX.Element {
     return (): void => clearTimeout(timeout);
   }, [searchParams, router]);
 
-  const loginMutation = useAppMutation<AuthResponseTypes['LoginResponse']>({
+  const loginMutation = useAppMutation<
+    AuthResponseTypes['LoginResponse'],
+    typeof AuthFormsData.login.type
+  >({
     mutationFn: loginRequest,
     errorTitle: 'Login failed',
     onSuccess: (data): void => {

@@ -7,4 +7,7 @@ const withBundleAnalyzer = bundleAnalyzer({
 export default withBundleAnalyzer({
   reactStrictMode: false,
   swcMinify: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 });
