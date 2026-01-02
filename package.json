@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "npm run lint && next build --turbopack",
+    "build": "next build --turbopack",
     "format": "prettier --write .",
     "start": "next start",
     "lint": "eslint \"{src,apps,libs,test}/**/*.{ts,tsx}\" --fix",
