@@ -1,0 +1,58 @@
+# ====================================
+# Prettier Ignore File
+# ====================================
+# Files and folders to exclude from Prettier formatting
+# ====================================
+
+# Node & dependencies
+node_modules
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Build and output folders
+.next
+out
+build
+dist
+coverage
+public
+.temp
+.cache
+
+# Environment & config files
+.env
+.env.*
+*.pem
+*.key
+*.crt
+*.lock
+
+# Generated / auto-built files
+*.min.js
+*.min.css
+*.bundle.js
+*.map
+**/*.generated.*
+**/generated/**
+
+# Assets and binaries
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.svg
+*.webp
+*.mp4
+*.mp3
+*.wav
+*.mov
+*.pdf
+*.zip
+
+# Miscellaneous
+.DS_Store
+.idea
+.vscode
+*.log
