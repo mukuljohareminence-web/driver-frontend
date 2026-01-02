@@ -2,8 +2,13 @@ import { z } from 'zod';
 
 const clientEnvSchema = z.object({
   NEXT_PUBLIC_API_BASE_URL: z
-    .url('NEXT_PUBLIC_API_BASE_URL must be a valid URL')
-    .min(1, 'NEXT_PUBLIC_API_BASE_URL is required'),
+    .string()
+    .min(1, 'NEXT_PUBLIC_API_BASE_URL is required')
+    .refine(
+      (value): boolean =>
+        value.startsWith('/') || z.string().url().safeParse(value).success,
+      'NEXT_PUBLIC_API_BASE_URL must be a valid URL or relative path',
+    ),
   NEXT_PUBLIC_APP_ENV: z.enum(['development', 'staging', 'production']),
   NEXT_PUBLIC_WS_URL: z
     .url('NEXT_PUBLIC_WS_URL must be a valid URL')

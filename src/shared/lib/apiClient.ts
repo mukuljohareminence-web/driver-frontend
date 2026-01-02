@@ -3,11 +3,11 @@ import axios, {
   type AxiosRequestConfig,
   type AxiosResponse,
 } from 'axios';
-import { env } from '@/shared/config/env';
+// import { env } from '@/shared/config/env';
 import type { ApiError } from '../types/api-response';
 
 export const api = axios.create({
-  baseURL: env.NEXT_PUBLIC_API_BASE_URL,
+  baseURL: 'https://codeless-stan-concurrently.ngrok-free.dev/api',
   withCredentials: true,
   // timeout: 10_000,
 });
